@@ -1,9 +1,11 @@
 body {
   font-family: 'Noto Sans', sans-serif;
   display: flex;
-  justify-content: center;
   text-align: center;
-  padding: 10px;
+}
+
+#blog-list {
+  margin-top: 100px;
 }
 
 h1 {
@@ -13,4 +15,16 @@ h1 {
 
 hr {
   border-color: rgba(229, 229, 229, 0.214);
+}
+
+nav {
+  background-color: rgb(186, 236, 236);
+  position: fixed;
+  align-items: center;
+  width: 100%;
+  flex-direction: center;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+  color: darkslategray;
 }
