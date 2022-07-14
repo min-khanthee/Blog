@@ -1,0 +1,16 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+
+h1 {
+  font-weight: 400;
+  color: darkslategray;
+}
+
+hr {
+  border-color: rgba(229, 229, 229, 0.214);
+}
