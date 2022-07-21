@@ -13,11 +13,15 @@
       <h3>Blog</h3>
     </nav>
     <form id="post-form">
-      <label for="post-tite">Title:</label><br />
-      <input type="text" id="post-title" /><br />
-      <label for="post-body">Post:</label><br />
-      <textarea id="post-area"></textarea>
-      <button>Post</button>
+      <div id="form-title">
+        <label for="post-tite">Title:</label><br />
+        <input type="text" id="post-title" /><br />
+      </div>
+      <div id="form-body">
+        <label for="post-body">Body:</label><br />
+        <textarea id="post-area"></textarea>
+      </div>
+      <button id="post-button">Post</button>
     </form>
     <div id="blog-list"></div>
     <script src="index.js"></script>
