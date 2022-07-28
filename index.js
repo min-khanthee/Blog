@@ -13,3 +13,17 @@ fetch('https://apis.scrimba.com/jsonplaceholder/posts')
     }
     document.getElementById('blog-list').innerHTML = html
   })
+
+// get title input & body input, and store it in a variable..
+
+document.getElementById('post-form').addEventListener('submit', (e) => {
+  e.preventDefault()
+  const postTitle = document.getElementById('post-title').value
+  const postBody = document.getElementById('post-area').value
+
+  const data = {
+    title: postTitle,
+    body: postBody,
+  }
+  console.log(data)
+})
