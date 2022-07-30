@@ -1,5 +1,7 @@
 let postsArray = []
 
+const form = document.getElementById('post-form')
+
 function renderPosts() {
   let html = ''
   for (let post of postsArray) {
@@ -21,7 +23,7 @@ fetch('https://apis.scrimba.com/jsonplaceholder/posts')
 
 // get title input & body input, and store it in a variable..
 
-document.getElementById('post-form').addEventListener('submit', (e) => {
+form.addEventListener('submit', (e) => {
   e.preventDefault()
   const postTitle = document.getElementById('post-title').value
   const postBody = document.getElementById('post-area').value
@@ -45,5 +47,6 @@ document.getElementById('post-form').addEventListener('submit', (e) => {
     .then((post) => {
       postsArray.unshift(post)
       renderPosts()
+      form.reset()
     })
 })
