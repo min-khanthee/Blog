@@ -1,17 +1,22 @@
-fetch('https://apis.scrimba.com/jsonplaceholder/posts')
-  .then((response) => response.json())
-  .then((data) => {
-    const postsArr = data.slice(0, 5)
-    console.log(data)
-    let html = ''
-    for (let post of postsArr) {
-      html += `
+let postsArray = []
+
+function renderPosts() {
+  let html = ''
+  for (let post of postsArray) {
+    html += `
       <h1>${post.title}</h1>
       <p>${post.body}</p>
       <hr />
       `
-    }
-    document.getElementById('blog-list').innerHTML = html
+  }
+  document.getElementById('blog-list').innerHTML = html
+}
+
+fetch('https://apis.scrimba.com/jsonplaceholder/posts')
+  .then((response) => response.json())
+  .then((data) => {
+    postsArray = data.slice(0, 5)
+    renderPosts()
   })
 
 // get title input & body input, and store it in a variable..
@@ -38,11 +43,7 @@ document.getElementById('post-form').addEventListener('submit', (e) => {
   fetch('https://apis.scrimba.com/jsonplaceholder/posts', options)
     .then((response) => response.json())
     .then((post) => {
-      document.getElementById('blog-list').innerHTML = `
-      <h1>${post.title}</h1>
-      <p>${post.body}</p>
-      <hr />
-      ${document.getElementById('blog-list').innerHTML}
-      `
+      postsArray.unshift(post)
+      renderPosts()
     })
 })
